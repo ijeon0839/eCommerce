@@ -14,7 +14,7 @@
 				var qty2 = document.getElementById("qty2");
 				var qty3 = document.getElementById("qty3");
 				var output = document.getElementById("output");
-				
+				var country = document.getElementById("country");
 				var cusSub = 1 * parseInt(qty1.value) + 9.99 * parseInt(qty2.value) + 27.99 * parseInt(qty3.value);
 				var comSub = 0.40 * parseInt(qty1.value) + 5.90 * parseInt(qty2.value) + 21.50 * parseInt(qty3.value);
 				var tax = 0.0875 * cusSub;
@@ -26,7 +26,7 @@
 				}else if(cusSub > 100){
 					ship += 0;
 				}
-					if(country = US){
+					if(country == US){
 					ship += 0;
 				}else{
 					ship += 3;
@@ -49,6 +49,7 @@
 		</script>
 	</head>
 	<body>
+
 		<div>
 		<h1>Votive Candle(All is Bright)</h1>
 		<img src = "bright.jpg"><br>
@@ -56,7 +57,7 @@
 		<p>Sale items do not qualify for any other promotions or discounts</p>
 		Quantity: <input id = "qty1" type = "text" placeholder = "Enter quantity">
 		</div>
-		
+		<br>
 		<div>
 		<h1>Tea Light Candle(Balsam and Clove)</h1>
 		<img src = "balsamclove.jpg"><br>
@@ -64,13 +65,18 @@
 		<p>Burn time of 4 to 6 hours</p>
 		Quantity: <input id = "qty2" type = "text" placeholder = "Enter quantity">
 		</div>
-		
+		<br>
 		<div>
 		<h1>Jar Candle(Bakery Air)</h1>
 		<img src = "bakery.png"><br>
 		<span>$27.99</span>
 		<p>Burn time of 110 to 150 hours</p>
 		Quantity: <input id = "qty3" type = "text" placeholder = "Enter quantity">
+		</div>
+		<br>
+		<div>
+		Country: <input id = "country" type = "text"> 
+		<p>*Oversea delivery includes additional shipping cost</p>
 		</div>
 		<br>
 		<button onclick = "calc()">Checkout</button>
