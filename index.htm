@@ -5,6 +5,7 @@
 		<style>
 			img {height: 300px;
 				}
+			
 		</style>
 	
 		<script>
@@ -17,9 +18,9 @@
 					if (qty2.value >= 3){
 					lightcandle*0.9;
 				}
-
 				var cusSub = 1 * parseInt(qty1.value) + lightcandle + 27.99 * parseInt(qty3.value);
-					
+
+
 				var comSub = 0.40 * parseInt(qty1.value) + 5.90 * parseInt(qty2.value) + 21.50 * parseInt(qty3.value);
 				var tax = 0.0875 * cusSub;
 				var prft = cusSub - comSub;
@@ -40,7 +41,13 @@
 				receipt += "Shipping Cost: $" + ship + "<br>";
 				receipt += "------------------------------------" + "<br>";
 				receipt += "Total: $" + tot.toFixed(2) + "<br>";
-				receipt += "<br>";
+					if (cusSub-(1*qty1.value) >= 50){
+						receipt += "You can have your new calendar for 2018!";
+						}else{
+						var left = 50 - (cusSub - (1 * qty1.value))
+						receipt += "You can have your new calendar for 2018 if you buy $" + left + " more!";
+						}
+				receipt += "<br>" + "<br>";
 				receipt += "Company Information" + "<br>";
 				receipt += "Profit: $" + prft.toFixed(2) + "<br>";
 				receipt += "Total Item Sold: " + sold + "<br>";
@@ -50,28 +57,35 @@
 		</script>
 	</head>
 	<body>
-
+		<div>
+			<h1>Event: Buy more than $50 and get your new calendar for 2018!</h1>
+			<img src = "promotion.jpg"><br>
+			<span>*Sale items do not qualify for this promotions</span>
+		</div>
 		<div>
 			<h1>Votive Candle(All is Bright)</h1>
 			<img src = "bright.jpg"><br>
 			<span><del>$1.99</del>$1.00</span>
-			<p>Sale items do not qualify for any other promotions or discounts</p>
+			<p>Here's your chance to sample our festive scents to your heart's content. 
+				Discover so many holiday scents to try and share!</p>
 			Quantity: <input id = "qty1" type = "text" placeholder = "Enter quantity">
 		</div>
 
 		<div>
 			<h1>Tea Light Candle(Balsam and Clove)</h1>
 			<img src = "balsamclove.jpg"><br>
-			<span>$9.99</span>
-			<p>10% discounts when you buy more than 3 products</p>
+			<span>$9.99(10% discounts when you buy more than 3 products)</span>
+			<p>You can never have too many of these on hand. 
+				Turn on the ambiance, set the mood and fragrance a room with these little gems.</p>
 			Quantity: <input id = "qty2" type = "text" placeholder = "Enter quantity">
 		</div>
-
+		
 		<div>
 			<h1>Jar Candle(Bakery Air)</h1>
 			<img src = "bakery.png"><br>
 			<span>$27.99</span>
-			<p>Burn time of 110 to 150 hours</p>
+			<p>The rich scents and distintive shape of our Classic Jar Candles are just right 
+				for anchoring a room or greeting a season with certainty.</p>
 			Quantity: <input id = "qty3" type = "text" placeholder = "Enter quantity">
 		</div>
 		<br>
